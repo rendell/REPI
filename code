@@ -1,0 +1,20 @@
+## Real Estate Price Index (REPI)
+library(dplyr)
+library(tidyr)
+
+input<-read.csv("Real estate data_IV_2018.csv")
+
+#Convert variables
+input$Rooms <- as.numeric(input$Rooms)
+input$Total.construction.size <-as.numeric(input$Total.construction.size)
+input$Total.land.property.size <-as.numeric(input$Total.land.property.size)
+
+
+#Filter 
+Residential<-filter(input,Use=="Residential")
+Commercial<-filter(input,Use=="Commercial")
+Land<-filter(input,Use=="Land")
+rm(input)
+
+# Just for testing
+print(which(input$Price == "16190000"))
