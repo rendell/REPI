@@ -2,6 +2,8 @@
 library(dplyr)
 library(tidyr)
 
+set.seed(1234)
+
 input<-read.csv("Real estate data_IV_2018.csv")
 
 #Convert variables
